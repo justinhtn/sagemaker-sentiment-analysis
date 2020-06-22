@@ -4,12 +4,11 @@ The notebook provided in this repository are intended to be executed using Amazo
 
 ## Steps to play with web app
 
-1. Clone the repo with `git clone https://github.com/justinhtn/sagemaker-sentiment-analysis.git`
-or download the `index.html` file in the 'website' directory.
+1. Head over to [Sentiment app](https://justinhtn.github.io/sagemaker-sentiment-analysis/) (running on github pages)
 
-2. Open the index.html file in your web browser of choice
+2. Copy and paste a review from imdb, yelp or make your own up.
 
-3. Copy and paste a review from imdb or make your own up!
+3. Submit the review and check the results!
 
 ## Steps to run in Sagemaker
 
