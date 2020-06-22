@@ -1,7 +1,7 @@
 .page {
     background-color: #F9F9F9;
     font-family: 'Roboto', sans-serif;
-    padding-top: 50px;
+    padding-top: 25px;
     display: flex;
     justify-content: center;
 }
@@ -12,6 +12,13 @@
     flex-direction: column;
     /* align-content: center; */
     /* text-align: center; */
+    padding: 80px 40px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: beige;
+    box-shadow: 16px 17px #ffe8e8;
+
+    
 }
 
 .btn {
@@ -53,6 +60,7 @@
     font-size: 45px;
     font-weight: 700;
     text-align: left;
+    padding-bottom: 20px;
     /* align-self: center; */
 }
 
