@@ -1,6 +1,6 @@
 # Sagemaker sentiment analysis
 
-The notebook provided in this repository are intended to be executed using Amazon's SageMaker platform.
+The notebook provided in this repository are intended to be executed using Amazon's SageMaker platform. But if you're looking just to play with the web app, see instructions below.
 
 ## Steps to play with web app
 
