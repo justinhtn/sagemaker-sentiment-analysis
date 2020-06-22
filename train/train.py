@@ -12,10 +12,9 @@ import torch.utils.data
 from model import LSTMClassifier
 
 def model_fn(model_dir):
-    """Load the PyTorch model from the `model_dir` directory."""
+    """load the PyTorch model"""
     print("Loading model.")
 
-    # First, load the parameters used to create the model.
     model_info = {}
     model_info_path = os.path.join(model_dir, 'model_info.pth')
     with open(model_info_path, 'rb') as f:
@@ -23,7 +22,6 @@ def model_fn(model_dir):
 
     print("model_info: {}".format(model_info))
 
-    # Determine the device and construct the model.
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = LSTMClassifier(model_info['embedding_dim'], model_info['hidden_dim'], model_info['vocab_size'])
 
@@ -57,8 +55,6 @@ def _get_train_data_loader(batch_size, training_dir):
 
 def train(model, train_loader, epochs, optimizer, loss_fn, device):
     """
-    This is the training method that is called by the PyTorch training script. The parameters
-    passed are as follows:
     model        - The PyTorch model that we wish to train.
     train_loader - The PyTorch DataLoader that should be used during training.
     epochs       - The total number of epochs to train for.
@@ -76,7 +72,6 @@ def train(model, train_loader, epochs, optimizer, loss_fn, device):
                 batch_X = batch_X.to(device)
                 batch_y = batch_y.to(device)
 
-                # TODO: Complete this train method to train the model provided.
                 optimizer.zero_grad()
                 output = model(batch_X)
                 loss = loss_fn(output, batch_y)
@@ -88,12 +83,10 @@ def train(model, train_loader, epochs, optimizer, loss_fn, device):
 
 
 if __name__ == '__main__':
-    # All of the model parameters and training parameters are sent as arguments when the script
-    # is executed. Here we set up an argument parser to easily access the parameters.
 
     parser = argparse.ArgumentParser()
 
-    # Training Parameters
+    # training parameters
     parser.add_argument('--batch-size', type=int, default=512, metavar='N',
                         help='input batch size for training (default: 512)')
     parser.add_argument('--epochs', type=int, default=10, metavar='N',
@@ -101,7 +94,7 @@ if __name__ == '__main__':
     parser.add_argument('--seed', type=int, default=1, metavar='S',
                         help='random seed (default: 1)')
 
-    # Model Parameters
+    # model parameters
     parser.add_argument('--embedding_dim', type=int, default=32, metavar='N',
                         help='size of the word embeddings (default: 32)')
     parser.add_argument('--hidden_dim', type=int, default=100, metavar='N',
@@ -109,7 +102,7 @@ if __name__ == '__main__':
     parser.add_argument('--vocab_size', type=int, default=5000, metavar='N',
                         help='size of the vocabulary (default: 5000)')
 
-    # SageMaker Parameters
+    # sageMaker parameters
     parser.add_argument('--hosts', type=list, default=json.loads(os.environ['SM_HOSTS']))
     parser.add_argument('--current-host', type=str, default=os.environ['SM_CURRENT_HOST'])
     parser.add_argument('--model-dir', type=str, default=os.environ['SM_MODEL_DIR'])
@@ -123,10 +116,10 @@ if __name__ == '__main__':
 
     torch.manual_seed(args.seed)
 
-    # Load the training data.
+    # load the training data.
     train_loader = _get_train_data_loader(args.batch_size, args.data_dir)
 
-    # Build the model.
+    # build the model.
     model = LSTMClassifier(args.embedding_dim, args.hidden_dim, args.vocab_size).to(device)
 
     with open(os.path.join(args.data_dir, "word_dict.pkl"), "rb") as f:
@@ -136,13 +129,13 @@ if __name__ == '__main__':
         args.embedding_dim, args.hidden_dim, args.vocab_size
     ))
 
-    # Train the model.
+    # train the model.
     optimizer = optim.Adam(model.parameters())
     loss_fn = torch.nn.BCELoss()
 
     train(model, train_loader, args.epochs, optimizer, loss_fn, device)
 
-    # Save the parameters used to construct the model
+    # save the parameters used to construct the model
     model_info_path = os.path.join(args.model_dir, 'model_info.pth')
     with open(model_info_path, 'wb') as f:
         model_info = {
@@ -152,12 +145,12 @@ if __name__ == '__main__':
         }
         torch.save(model_info, f)
 
-	# Save the word_dict
+	# save the word_dict
     word_dict_path = os.path.join(args.model_dir, 'word_dict.pkl')
     with open(word_dict_path, 'wb') as f:
         pickle.dump(model.word_dict, f)
 
-	# Save the model parameters
+	# save the model parameters
     model_path = os.path.join(args.model_dir, 'model.pth')
     with open(model_path, 'wb') as f:
         torch.save(model.cpu().state_dict(), f)
