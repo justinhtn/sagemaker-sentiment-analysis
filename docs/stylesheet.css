@@ -22,13 +22,13 @@
 }
 
 .btn {
-    width: 450px;
     background-color: black;
     border-radius: 3px;
     border-width: 1px;
     border-color: black;
     color: white;
     padding: 12px;
+    width: -webkit-fill-available;
 }
 
 .btn:hover {
@@ -46,17 +46,17 @@
 }
 
 .form-control {
-    width: 430px;
     height: 100px;
     font-family: 'Roboto', sans-serif;
     padding: 10px;
     border-color: #cfcfcf;
     border-radius: 3px;
     font-size: inherit;
+    width: -webkit-fill-available;
 }
 
 .header {
-    width: 500px;
+    width: 350px;
     font-size: 45px;
     font-weight: 700;
     text-align: left;
