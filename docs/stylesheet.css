@@ -53,10 +53,11 @@
     border-radius: 3px;
     font-size: inherit;
     width: -webkit-fill-available;
+    width: 450px;
 }
 
 .header {
-    width: 350px;
+    width: 450px;
     font-size: 45px;
     font-weight: 700;
     text-align: left;
