@@ -14,17 +14,17 @@ def review_to_words(review):
     nltk.download("stopwords", quiet=True)
     stemmer = PorterStemmer()
     
-    text = BeautifulSoup(review, "html.parser").get_text() # Remove HTML tags
-    text = re.sub(r"[^a-zA-Z0-9]", " ", text.lower()) # Convert to lower case
+    text = BeautifulSoup(review, "html.parser").get_text() 
+    text = re.sub(r"[^a-zA-Z0-9]", " ", text.lower()) 
     words = text.split() # Split string into words
-    words = [w for w in words if w not in stopwords.words("english")] # Remove stopwords
-    words = [PorterStemmer().stem(w) for w in words] # stem
+    words = [w for w in words if w not in stopwords.words("english")] 
+    words = [PorterStemmer().stem(w) for w in words] 
     
     return words
 
 def convert_and_pad(word_dict, sentence, pad=500):
-    NOWORD = 0 # We will use 0 to represent the 'no word' category
-    INFREQ = 1 # and we use 1 to represent the infrequent words, i.e., words not appearing in word_dict
+    NOWORD = 0 # 0 to represent the 'no word' category
+    INFREQ = 1 # 1 to represent the infrequent words
     
     working_sentence = [NOWORD] * pad
     
