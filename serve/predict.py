@@ -19,7 +19,7 @@ def model_fn(model_dir):
     """Load the PyTorch model from the `model_dir` directory."""
     print("Loading model.")
 
-    # first, load the parameters used to create the model.
+    # loading the parameters used to create the model
     model_info = {}
     model_info_path = os.path.join(model_dir, 'model_info.pth')
     with open(model_info_path, 'rb') as f:
@@ -27,16 +27,16 @@ def model_fn(model_dir):
 
     print("model_info: {}".format(model_info))
 
-    # determine the device and construct the model.
+    # determing the device and construct the model.
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = LSTMClassifier(model_info['embedding_dim'], model_info['hidden_dim'], model_info['vocab_size'])
 
-    # load the store model parameters.
+    # loading the store model parameters.
     model_path = os.path.join(model_dir, 'model.pth')
     with open(model_path, 'rb') as f:
         model.load_state_dict(torch.load(f))
 
-    # load the saved word_dict.
+    # loading the saved word_dict.
     word_dict_path = os.path.join(model_dir, 'word_dict.pkl')
     with open(word_dict_path, 'rb') as f:
         model.word_dict = pickle.load(f)
@@ -74,7 +74,7 @@ def predict_fn(input_data, model):
     data = torch.from_numpy(data_pack)
     data = data.to(device)
 
-    # Make sure to put the model into evaluation mode
+    # putting the model in eval mode
     model.eval()
 
     with torch.no_grad():
