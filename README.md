@@ -22,5 +22,3 @@ Click on the 'new' dropdown menu and select 'terminal'. By default, the working 
 
 cd SageMaker
 `git clone https://github.com/justinhtn/sagemaker-sentiment-analysis.git`
-
-Open and run the notebook of your choice
