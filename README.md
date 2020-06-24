@@ -4,6 +4,8 @@ The notebook provided in this repository are intended to be executed using Amazo
 
 ## Steps to play with web app
 
+ #### Update (6/24/20): As a cost saving measure, the Sagmaker endpoing was deleted - and as a result the live prediction is currently is non functional.
+ 
 1. Head over to [Sentiment app](https://justinhtn.github.io/sagemaker-sentiment-analysis/) (running on github pages)
 
 2. Copy and paste a review from imdb, yelp or make your own up.
