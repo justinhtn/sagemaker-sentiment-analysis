@@ -5,7 +5,7 @@ The notebook provided in this repository are intended to be executed using Amazo
 ---
  ## Update (6/24/20):
  
-As a cost saving measure, the Sagmaker endpoing was deleted - and as a result live prediction is currently is non functional. 
+As a cost saving measure, the Sagmaker endpoing was deleted - and as a result live prediction is currently is non functional. If you are looking to collaborate on future work and would like to give this demo a test go - please can reach out to me at justinhoughton@fastmail.com.
 
  
  ## ~~Steps to play with web app~~
