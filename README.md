@@ -3,12 +3,9 @@
 The notebook provided in this repository are intended to be executed using Amazon's SageMaker platform. But if you're looking just to play with the web app, see instructions below.
 
 ---
- ## Update (6/24/20):
- 
-As a cost saving measure, the Sagmaker endpoing was deleted - and as a result live prediction is currently is non functional. If you are looking to collaborate on future work and would like to give this demo a test go - please can reach out to me at justinhoughton@fastmail.com.
 
  
- ## ~~Steps to play with web app~~
+ ## Steps to play with web app
  
 1. Head over to [Sentiment app](https://justinhtn.github.io/sagemaker-sentiment-analysis/) (running on github pages)
 
