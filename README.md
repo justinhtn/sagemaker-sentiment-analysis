@@ -5,13 +5,15 @@ The notebook provided in this repository are intended to be executed using Amazo
 ---
 
  
- ## Steps to play with web app
+ ## Update:
+ To avoid uncessary costs, the sagemaker endpoint has been deleted. If you're interested in working together and would like to test out the web app, please contact me and I'd be more than happy to create a new endpoint!
+## ~~Steps to play with web app~~
  
-1. Head over to [Sentiment app](https://justinhtn.github.io/sagemaker-sentiment-analysis/) (running on github pages)
+1. ~~Head over to [Sentiment app](https://justinhtn.github.io/sagemaker-sentiment-analysis/) (running on github pages)~~
 
-2. Copy and paste a review from imdb, yelp or make your own up.
+2. ~~Copy and paste a review from imdb, yelp or make your own up.~~
 
-3. Submit the review and check the results!
+3. ~~Submit the review and check the results!~~
 
 ## Steps to run in Sagemaker
 
