@@ -6,7 +6,10 @@ The notebook provided in this repository are intended to be executed using Amazo
 
  
  ## Update:
- To avoid uncessary costs, the sagemaker endpoint has been deleted. If you're interested in working together and would like to test out the web app, please contact me and I'd be more than happy to create a new endpoint!
+To avoid uncessary costs, the sagemaker endpoint has been deleted. If you're interested in working together and would like to test out the web app, please contact me and I'd be more than happy to create a new endpoint! In the meantime, you can view the static notebook inside of deepnote using the button below.
+ 
+ <a href=" https://deepnote.com/project/348acfd6-62f0-4d91-937b-a244079511f1"> <img src="https://beta.deepnote.com/buttons/launch-in-deepnote.svg"> </a>
+
 ## ~~Steps to play with web app~~
  
 1. ~~Head over to [Sentiment app](https://justinhtn.github.io/sagemaker-sentiment-analysis/) (running on github pages)~~
