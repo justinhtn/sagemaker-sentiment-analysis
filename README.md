@@ -1,5 +1,7 @@
 # Sagemaker sentiment analysis
 
+<img src="https://repository-images.githubusercontent.com/273963529/91012480-fe88-11ea-8444-71c065a1c6c8" width="700" />
+
 The notebook provided in this repository are intended to be executed using Amazon's SageMaker platform. But if you're looking just to play with the web app, see instructions below.
 
 ---
