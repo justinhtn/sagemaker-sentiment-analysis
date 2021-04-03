@@ -30,3 +30,6 @@ Click on the 'new' dropdown menu and select 'terminal'. By default, the working 
 
 cd SageMaker
 `git clone https://github.com/justinhtn/sagemaker-sentiment-analysis.git`
+
+### View in deepnote
+<a href="https://deepnote.com/@justin-houghton-190b/sagemaker-sentiment-analysis-NIrP1mLwTZGTe6JEB5UR8Q?utm_campaign=sagemaker-sentiment-analysis&utm_medium=publishing&utm_source=copy_link"> <img src="https://beta.deepnote.com/buttons/launch-in-deepnote.svg"> </a>
